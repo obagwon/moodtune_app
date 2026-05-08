@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoodTune</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-wrapper">
+    <div class="phone-frame">
+      <div class="screen-container">
+        <section id="onboarding-screen" class="screen onboarding-screen active">
+          <div class="onboarding-fallback">
+            <div class="status-bar transparent">
+              <span>9:41</span>
+              <span>▮▮▮ Wi-Fi 🔋</span>
+            </div>
+            <div class="fallback-content">
+              <h1 class="logo">MoodTune</h1>
+              <p>오늘 기분에 맞는 음악을 찾아보세요</p>
+            </div>
+            <div class="fallback-deco moon">☾</div>
+            <div class="fallback-deco note note-1">♪</div>
+            <div class="fallback-deco note note-2">♫</div>
+            <div class="fallback-student">
+              <div class="student-head">🎧</div>
+              <div class="student-body"></div>
+            </div>
+          </div>
+          <button id="start-btn" class="onboarding-click-area" aria-label="시작하기"></button>
+        </section>
+
+        <section id="home-screen" class="screen app-screen">
+          <div class="status-bar">
+            <span>9:41</span>
+            <span>▮▮▮ Wi-Fi 🔋</span>
+          </div>
+          <div class="screen-content with-nav">
+            <header class="home-header">
+              <div>
+                <p class="hello">안녕하세요,</p>
+                <h2>오늘 기분은 어떤가요? ✨</h2>
+              </div>
+              <button class="bell-btn" type="button" aria-label="알림">🔔</button>
+            </header>
+
+            <div class="mood-grid">
+              <button class="mood-card mood-happy" data-mood="행복해요" data-icon="☀️" type="button">
+                <span class="mood-icon">☀️</span><span>행복해요</span>
+              </button>
+              <button class="mood-card mood-calm selected" data-mood="잔잔해요" data-icon="🌙" type="button">
+                <span class="mood-icon">🌙</span><span>잔잔해요</span>
+              </button>
+              <button class="mood-card mood-sad" data-mood="우울해요" data-icon="🌧️" type="button">
+                <span class="mood-icon">🌧️</span><span>우울해요</span>
+              </button>
+              <button class="mood-card mood-focus" data-mood="집중하고 싶어요" data-icon="💡" type="button">
+                <span class="mood-icon">💡</span><span>집중하고<br />싶어요</span>
+              </button>
+              <button class="mood-card mood-love" data-mood="설레요" data-icon="💗" type="button">
+                <span class="mood-icon">💗</span><span>설레요</span>
+              </button>
+              <button class="mood-card mood-comfort" data-mood="위로가 필요해요" data-icon="🫂" type="button">
+                <span class="mood-icon">🫂</span><span>위로가<br />필요해요</span>
+              </button>
+            </div>
+
+            <section class="situation-section">
+              <h3>상황별 추천</h3>
+              <div class="situation-row">
+                <button class="situation-chip" type="button"><span>📖</span><small>시험기간</small></button>
+                <button class="situation-chip" type="button"><span>💻</span><small>과제할 때</small></button>
+                <button class="situation-chip" type="button"><span>🌙</span><small>밤산책</small></button>
+                <button class="situation-chip" type="button"><span>☂️</span><small>비 오는 날</small></button>
+                <button class="situation-chip" type="button"><span>🚌</span><small>통학길</small></button>
+              </div>
+            </section>
+          </div>
+          <nav class="bottom-nav">
+            <button class="nav-item active" data-target="home-screen" type="button"><span>🏠</span><small>홈</small></button>
+            <button class="nav-item" data-target="recommend-screen" type="button"><span>🎵</span><small>추천</small></button>
+            <button class="nav-item" data-target="recommend-screen" type="button"><span>📋</span><small>플레이리스트</small></button>
+            <button class="nav-item nav-my" type="button"><span>👤</span><small>마이</small></button>
+          </nav>
+        </section>
+
+        <section id="recommend-screen" class="screen app-screen">
+          <div class="status-bar">
+            <span>9:41</span>
+            <span>▮▮▮ Wi-Fi 🔋</span>
+          </div>
+          <div class="screen-content with-nav">
+            <header class="recommend-header">
+              <button class="back-btn" data-back="home-screen" type="button">‹</button>
+              <h2>지금 기분에 어울리는 음악</h2>
+              <div id="selected-mood-tag" class="selected-mood-tag">🌙 잔잔해요</div>
+            </header>
+
+            <div class="song-list">
+              <article class="song-card" data-index="0">
+                <div class="album-thumb album-library"><span>📚</span></div>
+                <div class="song-info">
+                  <div class="song-title-row"><strong>1</strong><div><h3>Late Library</h3><p>윤하린</p></div></div>
+                  <div class="tag-row"><span>잔잔한</span><span>공부</span><span>감성</span></div>
+                </div>
+                <button class="more-btn" type="button">•••</button><button class="mini-play" type="button">▶</button>
+              </article>
+
+              <article class="song-card" data-index="1">
+                <div class="album-thumb album-night"><span>🌙</span></div>
+                <div class="song-info">
+                  <div class="song-title-row"><strong>2</strong><div><h3>밤공기</h3><p>서우</p></div></div>
+                  <div class="tag-row"><span>잔잔한</span><span>공부</span><span>감성</span></div>
+                </div>
+                <button class="more-btn" type="button">•••</button><button class="mini-play" type="button">▶</button>
+              </article>
+
+              <article class="song-card" data-index="2">
+                <div class="album-thumb album-campus"><span>🌿</span></div>
+                <div class="song-info">
+                  <div class="song-title-row"><strong>3</strong><div><h3>Slow Campus</h3><p>민재</p></div></div>
+                  <div class="tag-row"><span>잔잔한</span><span>감성</span><span>힐링</span></div>
+                </div>
+                <button class="more-btn" type="button">•••</button><button class="mini-play" type="button">▶</button>
+              </article>
+
+              <article class="song-card" data-index="3">
+                <div class="album-thumb album-rain"><span>☔</span></div>
+                <div class="song-info">
+                  <div class="song-title-row"><strong>4</strong><div><h3>Rainy Walk</h3><p>하린밴드</p></div></div>
+                  <div class="tag-row"><span>잔잔한</span><span>감성</span><span>비</span></div>
+                </div>
+                <button class="more-btn" type="button">•••</button><button class="mini-play" type="button">▶</button>
+              </article>
+            </div>
+            <button id="save-playlist-btn" class="primary-btn save-btn" type="button">🔖 플레이리스트로 저장</button>
+          </div>
+          <nav class="bottom-nav">
+            <button class="nav-item" data-target="home-screen" type="button"><span>🏠</span><small>홈</small></button>
+            <button class="nav-item active" data-target="recommend-screen" type="button"><span>🎵</span><small>추천</small></button>
+            <button class="nav-item" data-target="recommend-screen" type="button"><span>📋</span><small>플레이리스트</small></button>
+            <button class="nav-item nav-my" type="button"><span>👤</span><small>마이</small></button>
+          </nav>
+        </section>
+
+        <section id="player-screen" class="screen app-screen">
+          <div class="status-bar">
+            <span>9:41</span>
+            <span>▮▮▮ Wi-Fi 🔋</span>
+          </div>
+          <div class="screen-content player-content">
+            <header class="player-top">
+              <button class="back-btn" data-back="recommend-screen" type="button">⌄</button>
+              <button class="player-menu" type="button">•••</button>
+            </header>
+
+            <div id="player-cover" class="player-cover album-night-large">
+              <div class="cover-moon">☾</div>
+              <div class="cover-stars">✦ ✧ ✦</div>
+              <div class="cover-city"><span></span><span></span><span></span><span></span></div>
+            </div>
+
+            <section class="player-info">
+              <div><h2 id="player-title">밤공기</h2><p id="player-artist">서우</p></div>
+              <button id="like-btn" class="like-btn" type="button">♡</button>
+            </section>
+
+            <div id="waveform" class="waveform"></div>
+            <div class="time-row"><span>1:18</span><span>3:48</span></div>
+
+            <div class="player-controls">
+              <button type="button">⌘</button><button type="button">⏮</button><button id="play-toggle" class="play-main" type="button">❚❚</button><button type="button">⏭</button><button type="button">↻</button>
+            </div>
+
+            <section class="reason-card">
+              <div><h3>이 노래를 추천한 이유</h3><button type="button">♡</button></div>
+              <p>지친 하루 끝, 마음을 차분하게<br />정리하고 싶을 때 어울리는 곡이에요.</p>
+              <span class="reason-note">♫</span>
+            </section>
+
+            <section class="next-section">
+              <h3>다음 곡 미리 보기</h3>
+              <div class="next-song"><div class="next-thumb album-library"></div><div><strong>Late Library</strong><p>윤하린</p></div><span>3:42</span></div>
+              <div class="next-song"><div class="next-thumb album-campus"></div><div><strong>Slow Campus</strong><p>민재</p></div><span>4:01</span></div>
+              <div class="next-song"><div class="next-thumb album-rain"></div><div><strong>Rainy Walk</strong><p>하린밴드</p></div><span>3:55</span></div>
+            </section>
+          </div>
+        </section>
+      </div>
+      <div id="toast" class="toast">플레이리스트에 저장되었습니다</div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
