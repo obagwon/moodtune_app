@@ -24,4 +24,6 @@ set(INSTALL_BUNDLE_LIB_DIR "${CMAKE_INSTALL_PREFIX}")
 add_subdirectory(${FLUTTER_MANAGED_DIR})
 add_subdirectory("runner")
 
+include(flutter/generated_plugins.cmake)
+
 add_dependencies(${BINARY_NAME} flutter_assemble)
