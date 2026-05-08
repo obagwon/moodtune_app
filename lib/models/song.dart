@@ -20,14 +20,13 @@ class Song {
   final String duration;
 }
 
-/// Data migrated from the original JavaScript songs array.
 const songs = [
   Song(
     title: 'Late Library',
-    artist: '윤하린',
+    artist: '스하리',
     icon: '📚',
     coverGradient: AppGradients.libraryCover,
-    tags: ['잔잔한', '공부', '감성'],
+    tags: ['우울해요', '공부', '감성'],
     duration: '3:42',
   ),
   Song(
@@ -35,23 +34,23 @@ const songs = [
     artist: '서우',
     icon: '🌙',
     coverGradient: AppGradients.nightCover,
-    tags: ['잔잔한', '밤', '힐링'],
+    tags: ['우울해요', '밤', '몽환'],
     duration: '3:48',
   ),
   Song(
     title: 'Slow Campus',
     artist: '민재',
-    icon: '🌿',
+    icon: '🏫',
     coverGradient: AppGradients.campusCover,
-    tags: ['잔잔한', '감성', '힐링'],
+    tags: ['설레요', '감성', '몽환'],
     duration: '4:01',
   ),
   Song(
     title: 'Rainy Walk',
-    artist: '하린밴드',
+    artist: '흐린밴드',
     icon: '☔',
     coverGradient: AppGradients.rainCover,
-    tags: ['잔잔한', '감성', '비'],
+    tags: ['우울해요', '감성', '비'],
     duration: '3:55',
   ),
 ];

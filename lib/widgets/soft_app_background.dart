@@ -17,7 +17,8 @@ class SoftAppBackground extends StatelessWidget {
           Positioned(
             top: -90,
             left: -80,
-            child: _Glow(color: AppColors.bgLavender.withOpacity(0.9), size: 240),
+            child:
+                _Glow(color: AppColors.bgLavender.withOpacity(0.9), size: 240),
           ),
           Positioned(
             top: -60,

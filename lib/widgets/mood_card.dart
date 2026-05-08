@@ -31,11 +31,14 @@ class MoodCard extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(18),
               border: Border.all(
-                color: isSelected ? AppColors.primaryLight : const Color(0xFFEEE7F3),
+                color: isSelected
+                    ? AppColors.primaryLight
+                    : const Color(0xFFEEE7F3),
               ),
               boxShadow: [
                 BoxShadow(
-                  color: const Color(0xFF504678).withOpacity(isSelected ? 0.16 : 0.04),
+                  color: const Color(0xFF504678)
+                      .withOpacity(isSelected ? 0.16 : 0.04),
                   offset: const Offset(0, 8),
                   blurRadius: isSelected ? 24 : 18,
                 ),
@@ -52,7 +55,9 @@ class MoodCard extends StatelessWidget {
                     mood.label,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: isSelected ? AppColors.primaryDark : const Color(0xFF514A63),
+                      color: isSelected
+                          ? AppColors.primaryDark
+                          : const Color(0xFF514A63),
                       fontSize: 14,
                       height: 1.35,
                       fontWeight: FontWeight.w800,

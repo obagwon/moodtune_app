@@ -19,12 +19,12 @@ class _HomeScreenState extends State<HomeScreen> {
   Mood? _selectedMood;
 
   static const _moods = [
-    Mood(label: '행복해요', icon: '☀️', backgroundColor: Color(0xFFFFF6E6)),
-    Mood(label: '잔잔해요', icon: '🌙', backgroundColor: Color(0xFFF3EDFF)),
-    Mood(label: '우울해요', icon: '🌧️', backgroundColor: Color(0xFFF2F3FA)),
-    Mood(label: '집중하고\n싶어요', icon: '💡', backgroundColor: Color(0xFFF5F1FF)),
-    Mood(label: '설레요', icon: '💗', backgroundColor: Color(0xFFFFF0F7)),
-    Mood(label: '위로가\n필요해요', icon: '🫂', backgroundColor: Color(0xFFFFF4F1)),
+    Mood(label: '신나요', icon: '😊', backgroundColor: Color(0xFFFFF6E6)),
+    Mood(label: '우울해요', icon: '🌙', backgroundColor: Color(0xFFF3EDFF)),
+    Mood(label: '설레요', icon: '💗', backgroundColor: Color(0xFFF2F3FA)),
+    Mood(label: '집중하고\n싶어요', icon: '🎧', backgroundColor: Color(0xFFF5F1FF)),
+    Mood(label: '힐링이\n필요해요', icon: '🍃', backgroundColor: Color(0xFFFFF0F7)),
+    Mood(label: '위로가\n필요해요', icon: '🫶', backgroundColor: Color(0xFFFFF4F1)),
   ];
 
   void _openRecommend(Mood mood) {
@@ -46,7 +46,8 @@ class _HomeScreenState extends State<HomeScreen> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (_) => RecommendScreen(selectedMood: _selectedMood ?? _moods[1]),
+        builder: (_) =>
+            RecommendScreen(selectedMood: _selectedMood ?? _moods[1]),
       ),
     );
   }
@@ -72,10 +73,12 @@ class _HomeScreenState extends State<HomeScreen> {
                           const Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('안녕하세요,', style: TextStyle(color: AppColors.textSub, fontSize: 15)),
+                              Text('안녕하세요',
+                                  style: TextStyle(
+                                      color: AppColors.textSub, fontSize: 15)),
                               SizedBox(height: 6),
                               Text(
-                                '오늘 기분은 어떤가요? ✨',
+                                '오늘 기분은 어떤가요?',
                                 style: TextStyle(
                                   color: AppColors.textMain,
                                   fontSize: 24,
@@ -94,13 +97,14 @@ class _HomeScreenState extends State<HomeScreen> {
                               shape: BoxShape.circle,
                               boxShadow: [
                                 BoxShadow(
-                                  color: const Color(0xFF504678).withOpacity(0.08),
+                                  color:
+                                      const Color(0xFF504678).withOpacity(0.08),
                                   offset: const Offset(0, 8),
                                   blurRadius: 18,
                                 ),
                               ],
                             ),
-                            child: const Center(child: Text('🔔')),
+                            child: const Center(child: Text('♪')),
                           ),
                         ],
                       ),
@@ -109,7 +113,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         itemCount: _moods.length,
                         shrinkWrap: true,
                         physics: const NeverScrollableScrollPhysics(),
-                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 3,
                           mainAxisSpacing: 11,
                           crossAxisSpacing: 11,
@@ -127,22 +132,40 @@ class _HomeScreenState extends State<HomeScreen> {
                       const SizedBox(height: 34),
                       const Text(
                         '상황별 추천',
-                        style: TextStyle(fontSize: 20, letterSpacing: -0.5, fontWeight: FontWeight.w800),
+                        style: TextStyle(
+                            fontSize: 20,
+                            letterSpacing: -0.5,
+                            fontWeight: FontWeight.w800),
                       ),
                       const SizedBox(height: 14),
                       const SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
                           children: [
-                            SituationChip(icon: '📖', label: '시험기간', color: Color(0xFFF3EFFF)),
+                            SituationChip(
+                                icon: '📚',
+                                label: '시험기간',
+                                color: Color(0xFFF3EFFF)),
                             SizedBox(width: 10),
-                            SituationChip(icon: '💻', label: '과제할 때', color: Color(0xFFF3F5FF)),
+                            SituationChip(
+                                icon: '📝',
+                                label: '과제중',
+                                color: Color(0xFFF3F5FF)),
                             SizedBox(width: 10),
-                            SituationChip(icon: '🌙', label: '밤산책', color: Color(0xFFFFF5DF)),
+                            SituationChip(
+                                icon: '🌙',
+                                label: '밤산책',
+                                color: Color(0xFFFFF5DF)),
                             SizedBox(width: 10),
-                            SituationChip(icon: '☂️', label: '비 오는 날', color: Color(0xFFF8F0FF)),
+                            SituationChip(
+                                icon: '☔',
+                                label: '비 오는 날',
+                                color: Color(0xFFF8F0FF)),
                             SizedBox(width: 10),
-                            SituationChip(icon: '🚌', label: '통학길', color: Color(0xFFFFF0F7)),
+                            SituationChip(
+                                icon: '🚇',
+                                label: '통학길',
+                                color: Color(0xFFFFF0F7)),
                           ],
                         ),
                       ),

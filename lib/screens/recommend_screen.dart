@@ -17,7 +17,8 @@ class RecommendScreen extends StatelessWidget {
 
   void _handleNavTap(BuildContext context, int index) {
     if (index == 0) {
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const HomeScreen()));
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (_) => const HomeScreen()));
       return;
     }
     if (index == 3) {
@@ -52,7 +53,8 @@ class RecommendScreen extends StatelessWidget {
                               top: 0,
                               child: IconButton(
                                 onPressed: () => Navigator.pop(context),
-                                icon: const Text('‹', style: TextStyle(fontSize: 38, height: 1)),
+                                icon: const Icon(
+                                    Icons.arrow_back_ios_new_rounded),
                               ),
                             ),
                             const Padding(
@@ -69,7 +71,8 @@ class RecommendScreen extends StatelessWidget {
                             Positioned(
                               bottom: 0,
                               child: Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 16, vertical: 8),
                                 decoration: BoxDecoration(
                                   color: const Color(0xFFEDE8FF),
                                   borderRadius: BorderRadius.circular(999),
@@ -101,7 +104,8 @@ class RecommendScreen extends StatelessWidget {
                             onTap: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (_) => PlayerScreen(song: song)),
+                                MaterialPageRoute(
+                                    builder: (_) => PlayerScreen(song: song)),
                               );
                             },
                           );
@@ -130,7 +134,7 @@ class RecommendScreen extends StatelessWidget {
                           ),
                           child: const Center(
                             child: Text(
-                              '🔖 플레이리스트로 저장',
+                              '플레이리스트로 저장',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,
@@ -144,7 +148,9 @@ class RecommendScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              MoodTuneBottomNavBar(currentIndex: 1, onTap: (index) => _handleNavTap(context, index)),
+              MoodTuneBottomNavBar(
+                  currentIndex: 1,
+                  onTap: (index) => _handleNavTap(context, index)),
             ],
           ),
         ),

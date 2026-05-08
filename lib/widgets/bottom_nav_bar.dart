@@ -15,10 +15,10 @@ class MoodTuneBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const items = [
-      _BottomNavItem('🏠', '홈'),
-      _BottomNavItem('🎵', '추천'),
-      _BottomNavItem('📋', '플레이리스트'),
-      _BottomNavItem('👤', '마이'),
+      _BottomNavItem(Icons.home_rounded, '홈'),
+      _BottomNavItem(Icons.auto_awesome_rounded, '추천'),
+      _BottomNavItem(Icons.queue_music_rounded, '플레이리스트'),
+      _BottomNavItem(Icons.person_rounded, '마이'),
     ];
 
     return ClipRRect(
@@ -41,12 +41,19 @@ class MoodTuneBottomNavBar extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(items[index].icon, style: const TextStyle(fontSize: 20)),
+                        Icon(
+                          items[index].icon,
+                          color:
+                              isActive ? AppColors.primary : AppColors.textSub,
+                          size: 22,
+                        ),
                         const SizedBox(height: 4),
                         Text(
                           items[index].label,
                           style: TextStyle(
-                            color: isActive ? AppColors.primary : AppColors.textSub,
+                            color: isActive
+                                ? AppColors.primary
+                                : AppColors.textSub,
                             fontSize: 11,
                             fontWeight: FontWeight.w700,
                           ),
@@ -67,6 +74,6 @@ class MoodTuneBottomNavBar extends StatelessWidget {
 class _BottomNavItem {
   const _BottomNavItem(this.icon, this.label);
 
-  final String icon;
+  final IconData icon;
   final String label;
 }

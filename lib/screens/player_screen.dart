@@ -20,16 +20,62 @@ class _PlayerScreenState extends State<PlayerScreen> {
   bool _isPlaying = true;
 
   static const _waveHeights = [
-    12.0, 19.0, 28.0, 16.0, 34.0, 22.0, 11.0, 24.0, 30.0, 14.0,
-    18.0, 31.0, 25.0, 15.0, 27.0, 10.0, 32.0, 21.0, 13.0, 29.0,
-    17.0, 26.0, 34.0, 20.0, 12.0, 23.0, 30.0, 16.0, 27.0, 11.0,
-    19.0, 33.0, 24.0, 15.0, 28.0, 22.0, 13.0, 31.0, 18.0, 25.0,
-    10.0, 29.0, 34.0, 17.0, 21.0, 27.0, 14.0, 30.0, 19.0, 12.0,
+    12.0,
+    19.0,
+    28.0,
+    16.0,
+    34.0,
+    22.0,
+    11.0,
+    24.0,
+    30.0,
+    14.0,
+    18.0,
+    31.0,
+    25.0,
+    15.0,
+    27.0,
+    10.0,
+    32.0,
+    21.0,
+    13.0,
+    29.0,
+    17.0,
+    26.0,
+    34.0,
+    20.0,
+    12.0,
+    23.0,
+    30.0,
+    16.0,
+    27.0,
+    11.0,
+    19.0,
+    33.0,
+    24.0,
+    15.0,
+    28.0,
+    22.0,
+    13.0,
+    31.0,
+    18.0,
+    25.0,
+    10.0,
+    29.0,
+    34.0,
+    17.0,
+    21.0,
+    27.0,
+    14.0,
+    30.0,
+    19.0,
+    12.0,
   ];
 
   @override
   Widget build(BuildContext context) {
-    final otherSongs = songs.where((song) => song.title != widget.song.title).take(3).toList();
+    final otherSongs =
+        songs.where((song) => song.title != widget.song.title).take(3).toList();
 
     return Scaffold(
       body: SoftAppBackground(
@@ -45,9 +91,11 @@ class _PlayerScreenState extends State<PlayerScreen> {
                     children: [
                       IconButton(
                         onPressed: () => Navigator.pop(context),
-                        icon: const Text('⌄', style: TextStyle(fontSize: 34, height: 1)),
+                        icon: const Icon(Icons.arrow_back_ios_new_rounded),
                       ),
-                      const Text('•••', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w900)),
+                      const Text('MoodTune',
+                          style: TextStyle(
+                              fontSize: 17, fontWeight: FontWeight.w900)),
                     ],
                   ),
                 ),
@@ -79,18 +127,22 @@ class _PlayerScreenState extends State<PlayerScreen> {
                             ),
                           ),
                           const SizedBox(height: 6),
-                          Text(widget.song.artist, style: const TextStyle(color: AppColors.textSub, fontSize: 14)),
+                          Text(widget.song.artist,
+                              style: const TextStyle(
+                                  color: AppColors.textSub, fontSize: 14)),
                         ],
                       ),
                     ),
                     IconButton(
                       onPressed: () => setState(() => _isLiked = !_isLiked),
-                      icon: Text(
-                        _isLiked ? '♥' : '♡',
-                        style: TextStyle(
-                          color: _isLiked ? AppColors.accentPink : AppColors.textMain,
-                          fontSize: 30,
-                        ),
+                      icon: Icon(
+                        _isLiked
+                            ? Icons.favorite_rounded
+                            : Icons.favorite_border_rounded,
+                        color: _isLiked
+                            ? AppColors.accentPink
+                            : AppColors.textMain,
+                        size: 30,
                       ),
                     ),
                   ],
@@ -113,7 +165,10 @@ class _PlayerScreenState extends State<PlayerScreen> {
                                   gradient: const LinearGradient(
                                     begin: Alignment.topCenter,
                                     end: Alignment.bottomCenter,
-                                    colors: [AppColors.primary, Color(0xFFF3A6CD)],
+                                    colors: [
+                                      AppColors.primary,
+                                      Color(0xFFF3A6CD)
+                                    ],
                                   ),
                                 ),
                               ),
@@ -127,16 +182,20 @@ class _PlayerScreenState extends State<PlayerScreen> {
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('1:18', style: TextStyle(color: AppColors.textSub, fontSize: 12)),
-                    Text('3:48', style: TextStyle(color: AppColors.textSub, fontSize: 12)),
+                    Text('1:18',
+                        style:
+                            TextStyle(color: AppColors.textSub, fontSize: 12)),
+                    Text('3:48',
+                        style:
+                            TextStyle(color: AppColors.textSub, fontSize: 12)),
                   ],
                 ),
                 const SizedBox(height: 23),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    _ControlButton(label: '⌘'),
-                    _ControlButton(label: '⏮'),
+                    const _ControlButton(icon: Icons.shuffle_rounded),
+                    const _ControlButton(icon: Icons.skip_previous_rounded),
                     GestureDetector(
                       onTap: () => setState(() => _isPlaying = !_isPlaying),
                       child: Container(
@@ -154,15 +213,18 @@ class _PlayerScreenState extends State<PlayerScreen> {
                           ],
                         ),
                         child: Center(
-                          child: Text(
-                            _isPlaying ? '❚❚' : '▶',
-                            style: const TextStyle(color: Colors.white, fontSize: 24),
+                          child: Icon(
+                            _isPlaying
+                                ? Icons.pause_rounded
+                                : Icons.play_arrow_rounded,
+                            color: Colors.white,
+                            size: 32,
                           ),
                         ),
                       ),
                     ),
-                    _ControlButton(label: '⏭'),
-                    _ControlButton(label: '↻'),
+                    const _ControlButton(icon: Icons.skip_next_rounded),
+                    const _ControlButton(icon: Icons.repeat_rounded),
                   ],
                 ),
                 const SizedBox(height: 28),
@@ -189,21 +251,29 @@ class _PlayerScreenState extends State<PlayerScreen> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text('이 노래를 추천한 이유', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w900)),
-                              Text('♡', style: TextStyle(color: AppColors.primary, fontSize: 18)),
+                              Text('이 노래를 추천한 이유',
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w900)),
+                              Icon(Icons.auto_awesome_rounded,
+                                  color: AppColors.primary, size: 18),
                             ],
                           ),
                           SizedBox(height: 10),
                           Text(
-                            '지친 하루 끝, 마음을 차분하게\n정리하고 싶을 때 어울리는 곡이에요.',
-                            style: TextStyle(color: AppColors.textSub, fontSize: 14, height: 1.6),
+                            '지친 하루와 마음을 차분하게\n정리하고 싶을 때 어울리는 곡이에요.',
+                            style: TextStyle(
+                                color: AppColors.textSub,
+                                fontSize: 14,
+                                height: 1.6),
                           ),
                         ],
                       ),
                       Positioned(
                         right: 4,
                         bottom: 0,
-                        child: Text('♫', style: TextStyle(color: Color(0xFFB7A2FF), fontSize: 32)),
+                        child: Icon(Icons.music_note_rounded,
+                            color: Color(0xFFB7A2FF), size: 32),
                       ),
                     ],
                   ),
@@ -211,7 +281,9 @@ class _PlayerScreenState extends State<PlayerScreen> {
                 const SizedBox(height: 24),
                 const Align(
                   alignment: Alignment.centerLeft,
-                  child: Text('다음 곡 미리 보기', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w900)),
+                  child: Text('다음 곡 미리 보기',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.w900)),
                 ),
                 const SizedBox(height: 12),
                 ...otherSongs.map((song) => _NextSongRow(song: song)),
@@ -225,13 +297,13 @@ class _PlayerScreenState extends State<PlayerScreen> {
 }
 
 class _ControlButton extends StatelessWidget {
-  const _ControlButton({required this.label});
+  const _ControlButton({required this.icon});
 
-  final String label;
+  final IconData icon;
 
   @override
   Widget build(BuildContext context) {
-    return Text(label, style: const TextStyle(color: AppColors.textMain, fontSize: 22));
+    return Icon(icon, color: AppColors.textMain, size: 24);
   }
 }
 
@@ -252,13 +324,18 @@ class _NextSongRow extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(song.title, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w800)),
+                Text(song.title,
+                    style: const TextStyle(
+                        fontSize: 14, fontWeight: FontWeight.w800)),
                 const SizedBox(height: 3),
-                Text(song.artist, style: const TextStyle(color: AppColors.textSub, fontSize: 12)),
+                Text(song.artist,
+                    style: const TextStyle(
+                        color: AppColors.textSub, fontSize: 12)),
               ],
             ),
           ),
-          Text(song.duration, style: const TextStyle(color: AppColors.textLight, fontSize: 12)),
+          Text(song.duration,
+              style: const TextStyle(color: AppColors.textLight, fontSize: 12)),
         ],
       ),
     );

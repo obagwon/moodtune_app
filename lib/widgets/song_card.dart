@@ -25,7 +25,7 @@ class SongCard extends StatelessWidget {
         onTap: onTap,
         borderRadius: BorderRadius.circular(18),
         child: Container(
-          minHeight: 96,
+          constraints: const BoxConstraints(minHeight: 96),
           padding: const EdgeInsets.fromLTRB(12, 12, 46, 12),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(18),
@@ -54,7 +54,8 @@ class SongCard extends StatelessWidget {
                           children: [
                             Text(
                               '${index + 1}',
-                              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w900),
+                              style: const TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.w900),
                             ),
                             const SizedBox(width: 9),
                             Expanded(
@@ -65,12 +66,15 @@ class SongCard extends StatelessWidget {
                                     song.title,
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
-                                    style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w800),
+                                    style: const TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w800),
                                   ),
                                   const SizedBox(height: 5),
                                   Text(
                                     song.artist,
-                                    style: const TextStyle(color: AppColors.textSub, fontSize: 12),
+                                    style: const TextStyle(
+                                        color: AppColors.textSub, fontSize: 12),
                                   ),
                                 ],
                               ),
@@ -84,7 +88,8 @@ class SongCard extends StatelessWidget {
                           children: song.tags
                               .map(
                                 (tag) => Container(
-                                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 8, vertical: 4),
                                   decoration: BoxDecoration(
                                     color: const Color(0xFFF3EFFF),
                                     borderRadius: BorderRadius.circular(999),
@@ -109,7 +114,9 @@ class SongCard extends StatelessWidget {
               const Positioned(
                 top: -5,
                 right: -32,
-                child: Text('•••', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w900)),
+                child: Text('Mood',
+                    style:
+                        TextStyle(fontSize: 14, fontWeight: FontWeight.w900)),
               ),
               Positioned(
                 right: -32,
@@ -122,7 +129,10 @@ class SongCard extends StatelessWidget {
                     color: const Color(0xFFFBF9FF),
                     border: Border.all(color: const Color(0xFFE4DDEC)),
                   ),
-                  child: const Center(child: Text('▶', style: TextStyle(fontSize: 12))),
+                  child: const Center(
+                    child: Icon(Icons.play_arrow_rounded,
+                        size: 16, color: AppColors.primary),
+                  ),
                 ),
               ),
             ],

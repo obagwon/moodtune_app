@@ -41,7 +41,10 @@ class AlbumCover extends StatelessWidget {
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  colors: [Colors.white.withOpacity(0.20), Colors.black.withOpacity(0.14)],
+                  colors: [
+                    Colors.white.withOpacity(0.20),
+                    Colors.black.withOpacity(0.14)
+                  ],
                 ),
               ),
             ),
@@ -54,7 +57,7 @@ class AlbumCover extends StatelessWidget {
               left: 24,
               right: 24,
               child: Text(
-                '✦   ✧   ✦',
+                'MOODTUNE',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.white.withOpacity(0.76),
@@ -68,7 +71,7 @@ class AlbumCover extends StatelessWidget {
               left: 0,
               right: 0,
               child: Text(
-                song.icon == '🌙' ? '☾' : song.icon,
+                song.icon,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.white.withOpacity(0.92),
