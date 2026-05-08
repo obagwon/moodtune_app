@@ -1,0 +1,10 @@
+Flutter/Flutter.podspec
+Flutter/Generated.xcconfig
+Flutter/ephemeral/
+Flutter/flutter_export_environment.sh
+Pods/
+.symlinks/
+profile
+DerivedData/
+
+build/
