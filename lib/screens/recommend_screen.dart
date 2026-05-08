@@ -126,7 +126,8 @@ class RecommendScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(22),
                             boxShadow: [
                               BoxShadow(
-                                color: AppColors.primary.withOpacity(0.28),
+                                color:
+                                    AppColors.primary.withValues(alpha: 0.28),
                                 offset: const Offset(0, 10),
                                 blurRadius: 24,
                               ),

@@ -97,8 +97,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               shape: BoxShape.circle,
                               boxShadow: [
                                 BoxShadow(
-                                  color:
-                                      const Color(0xFF504678).withOpacity(0.08),
+                                  color: const Color(0xFF504678)
+                                      .withValues(alpha: 0.08),
                                   offset: const Offset(0, 8),
                                   blurRadius: 18,
                                 ),

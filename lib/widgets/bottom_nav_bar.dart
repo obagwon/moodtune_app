@@ -24,7 +24,7 @@ class MoodTuneBottomNavBar extends StatelessWidget {
     return ClipRRect(
       child: DecoratedBox(
         decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.94),
+          color: Colors.white.withValues(alpha: 0.94),
           border: const Border(top: BorderSide(color: Color(0xFFF0EAF5))),
         ),
         child: SafeArea(

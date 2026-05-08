@@ -32,7 +32,7 @@ class SongCard extends StatelessWidget {
             border: Border.all(color: AppColors.cardBorder),
             boxShadow: [
               BoxShadow(
-                color: const Color(0xFF504678).withOpacity(0.06),
+                color: const Color(0xFF504678).withValues(alpha: 0.06),
                 offset: const Offset(0, 8),
                 blurRadius: 18,
               ),

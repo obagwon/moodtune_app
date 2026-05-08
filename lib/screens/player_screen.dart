@@ -206,7 +206,7 @@ class _PlayerScreenState extends State<PlayerScreen> {
                           gradient: AppGradients.playButton,
                           boxShadow: [
                             BoxShadow(
-                              color: AppColors.primary.withOpacity(0.32),
+                              color: AppColors.primary.withValues(alpha: 0.32),
                               offset: const Offset(0, 10),
                               blurRadius: 24,
                             ),
@@ -237,7 +237,7 @@ class _PlayerScreenState extends State<PlayerScreen> {
                     border: Border.all(color: AppColors.cardBorder),
                     boxShadow: [
                       BoxShadow(
-                        color: const Color(0xFF504678).withOpacity(0.06),
+                        color: const Color(0xFF504678).withValues(alpha: 0.06),
                         offset: const Offset(0, 8),
                         blurRadius: 18,
                       ),

@@ -26,7 +26,7 @@ class AlbumCover extends StatelessWidget {
         boxShadow: showArtworkDetails
             ? [
                 BoxShadow(
-                  color: const Color(0xFF262255).withOpacity(0.20),
+                  color: const Color(0xFF262255).withValues(alpha: 0.20),
                   offset: const Offset(0, 14),
                   blurRadius: 34,
                 ),
@@ -42,8 +42,8 @@ class AlbumCover extends StatelessWidget {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    Colors.white.withOpacity(0.20),
-                    Colors.black.withOpacity(0.14)
+                    Colors.white.withValues(alpha: 0.20),
+                    Colors.black.withValues(alpha: 0.14)
                   ],
                 ),
               ),
@@ -60,7 +60,7 @@ class AlbumCover extends StatelessWidget {
                 'MOODTUNE',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Colors.white.withOpacity(0.76),
+                  color: Colors.white.withValues(alpha: 0.76),
                   fontSize: 16,
                   letterSpacing: 8,
                 ),
@@ -74,7 +74,7 @@ class AlbumCover extends StatelessWidget {
                 song.icon,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Colors.white.withOpacity(0.92),
+                  color: Colors.white.withValues(alpha: 0.92),
                   fontSize: size * 0.18,
                 ),
               ),
@@ -84,9 +84,9 @@ class AlbumCover extends StatelessWidget {
               right: 28,
               bottom: 0,
               height: size * 0.25,
-              child: Row(
+              child: const Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
-                children: const [
+                children: [
                   _Building(heightFactor: 0.62),
                   SizedBox(width: 7),
                   _Building(heightFactor: 0.90),
@@ -115,10 +115,10 @@ class _Building extends StatelessWidget {
       child: FractionallySizedBox(
         heightFactor: heightFactor,
         alignment: Alignment.bottomCenter,
-        child: DecoratedBox(
+        child: const DecoratedBox(
           decoration: BoxDecoration(
-            color: const Color(0xFF111432).withOpacity(0.78),
-            borderRadius: const BorderRadius.vertical(top: Radius.circular(7)),
+            color: Color(0xC7111432),
+            borderRadius: BorderRadius.vertical(top: Radius.circular(7)),
           ),
         ),
       ),

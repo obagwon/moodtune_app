@@ -17,13 +17,14 @@ class SoftAppBackground extends StatelessWidget {
           Positioned(
             top: -90,
             left: -80,
-            child:
-                _Glow(color: AppColors.bgLavender.withOpacity(0.9), size: 240),
+            child: _Glow(
+                color: AppColors.bgLavender.withValues(alpha: 0.9), size: 240),
           ),
           Positioned(
             top: -60,
             right: -90,
-            child: _Glow(color: AppColors.bgPink.withOpacity(0.85), size: 220),
+            child: _Glow(
+                color: AppColors.bgPink.withValues(alpha: 0.85), size: 220),
           ),
           child,
         ],
@@ -46,7 +47,7 @@ class _Glow extends StatelessWidget {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         gradient: RadialGradient(
-          colors: [color, color.withOpacity(0)],
+          colors: [color, color.withValues(alpha: 0)],
         ),
       ),
     );

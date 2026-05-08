@@ -38,7 +38,7 @@ class MoodCard extends StatelessWidget {
               boxShadow: [
                 BoxShadow(
                   color: const Color(0xFF504678)
-                      .withOpacity(isSelected ? 0.16 : 0.04),
+                      .withValues(alpha: isSelected ? 0.16 : 0.04),
                   offset: const Offset(0, 8),
                   blurRadius: isSelected ? 24 : 18,
                 ),

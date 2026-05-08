@@ -32,7 +32,7 @@ class MoodTuneApp extends StatelessWidget {
         fontFamily: 'Roboto',
         snackBarTheme: SnackBarThemeData(
           behavior: SnackBarBehavior.floating,
-          backgroundColor: AppColors.textMain.withOpacity(0.9),
+          backgroundColor: AppColors.textMain.withValues(alpha: 0.9),
           contentTextStyle: const TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.w700,

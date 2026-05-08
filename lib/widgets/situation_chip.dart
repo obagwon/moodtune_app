@@ -23,7 +23,7 @@ class SituationChip extends StatelessWidget {
         border: Border.all(color: const Color(0xFFEDE7F5)),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xFF645296).withOpacity(0.06),
+            color: const Color(0xFF645296).withValues(alpha: 0.06),
             offset: const Offset(0, 6),
             blurRadius: 16,
           ),
