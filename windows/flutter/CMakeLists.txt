@@ -39,8 +39,6 @@ add_dependencies(flutter_wrapper_app flutter_assemble)
 
 set(PLUGIN_BUNDLED_LIBRARIES)
 
-include(flutter/generated_plugins.cmake)
-
 add_custom_command(
   OUTPUT ${FLUTTER_LIBRARY} ${FLUTTER_LIBRARY}.lib
     ${CMAKE_CURRENT_BINARY_DIR}/_phony_
